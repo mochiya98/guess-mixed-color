@@ -1,0 +1,23 @@
+{
+  "name": "guess-mixed-color",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Yukimasa Funaoka <yukimasafunaoka@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "color": "github:mochiya98/color#support_alpha",
+    "parcel": "^2.0.0-alpha.1.1",
+    "parcel-plugin-bundle-visualiser": "^1.2.0",
+    "preact": "^10.0.0-rc.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0"
+  }
+}

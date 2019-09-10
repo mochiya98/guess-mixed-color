@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>重ねた色から元の色を計算するやつ</title>
+<style>
+*{margin:0;padding:0;}
+body{font-size:16px;line-height:20px;}
+input,button{font-size:14px;line-height:18px;}
+#guess-mixed-color-view>*{margin:10px;}
+h1{font-size:20px;line-height:26px;}
+input,button{display:inline-block;vertical-align:middle;}
+input[type="text"]{display:inline-block;border:1px solid #ccc;line-height:1.3;padding:8px 6px;background-color:transparent;border-radius:3px;}
+button{border-width:0;line-height:1.3;padding:7px 10px;background-color:#0084d1;color:#fff;border-radius:3px;border-top:0px solid transparent;border-bottom:4px solid #06b;}
+button:hover:not(:disabled){margin-top:1px;border-bottom-width:3px;}
+button:active:not(:disabled){margin-top:2px;border-bottom-width:2px;}
+button,input[type="text"]{-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+.color-io{position:relative;top:0;left:0;display:inline-block;}
+.color-io:before{content:"";display:block;position:absolute;top:1px;left:70px;width:calc(100% - 70px);height:calc(100% - 1px);box-sizing:border-box;border:1px solid #ccc;border-left-width:0;border-radius:0 3px 3px 0;z-index:3;}
+.color-io>*{position:relative;top:0;left:0;z-index:4;}
+.color-io button{width:70px;}
+.color-io__input-wrapper{display:inline-block;position:relative;top:0;left:0;padding:1px;}
+.color-io__input-wrapper input[type="text"]{padding-left:30px;border-width:0;border-radius:0;width:250px;max-width:calc(100vw - 150px);}
+.color-io__input-wrapper input[type="text"]:disabled{}
+.color-io__input-wrapper__mark{position:absolute;top:10px;left:7px;width:16px;height:16px;border-radius:8px;background-color:#9999;pointer-events:none;}
+.color-io button:disabled{background-color:#999;border-bottom-color:#777;}
+.color-io--disabled{background-color:#eee;}
+.selectable-fieldset{display:inline-block;padding:8px;position:relative;top:0;left:0;vertical-align:bottom;cursor:pointer;}
+.selectable-fieldset__radio{position:absolute;top:1px;left:0;width:14px;height:14px;border:1px solid #bbb;border-radius:8px;}
+.selectable-fieldset--checked .selectable-fieldset__radio:before{content:"";display:block;margin:3px;width:8px;height:8px;background-color:#0084d1;border-radius:99px;}
+.selectable-fieldset__title{position:absolute;top:0;left:16px;padding-left:20px;padding-right:4px;background-color:#fff;}
+.selectable-fieldset__wbox{border:1px solid #bbb;padding:16px;padding-top:20px;border-radius:3px;}
+.selectable-fieldset__cbox{cursor:auto;}
+.selectable-fieldset--checked .selectable-fieldset__wbox,
+.selectable-fieldset--checked .selectable-fieldset__radio{border-color:#0084d1;}
+.color-preview{position:relative;top:0;left:0;width:200px;height:60px;margin:5px 10px;}
+.color-preview div{position:absolute;width:calc(100% - 10px);height:calc(100% - 10px);}
+.color-preview div:first-child{bottom:0;right:0;}
+.color-preview div:last-child{top:0;left:0;}
+.color-preview div:last-child:before{content:"Preview";color:#fff;font-size:20px;display:block;position:absolute;top:calc(50% + 5px);left:calc(50% + 5px);-webkit-font-smoothing: subpixel-antialiased;transform:translateZ(0) translateX(-50%) translateY(-50%);}
+.darkmode-switcher{cursor:pointer;font-family:"Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji","Noto Emoji","Apple Color Emoji";}
+.darkmode-switcher_switch body,.darkmode-switcher_switch .selectable-fieldset__title{transition:background-color .5s ease;}
+.darkmode body,.darkmode .selectable-fieldset__title{background-color:#111;color:#eee;}
+.darkmode input,.darkmode button{color:#eee;}
+.darkmode a{color:#0d9;}
+.darkmode .color-io:before{border-color:#777;}
+.darkmode .selectable-fieldset__wbox{border-color:#555;}
+.darkmode .selectable-fieldset--checked .selectable-fieldset__wbox,
+.darkmode .selectable-fieldset--checked .selectable-fieldset__radio{border-color:#0d9;}
+.darkmode .selectable-fieldset--checked .selectable-fieldset__radio::before{background-color:#0d9;}
+</style>
+</head>
+<body>
+<script>if(matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.classList.add("darkmode");</script>
+<div id="app"></div>
+<script src="index.js" async="" defer=""></script>
+</body>
+</html>
