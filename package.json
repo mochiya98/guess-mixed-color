@@ -4,20 +4,24 @@
   "description": "",
   "main": "dist/index.html",
   "scripts": {
+    "build": "npx parcel build src/index.html",
+    "start": "npx parcel src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
+  "private": true,
   "author": "Yukimasa Funaoka <yukimasafunaoka@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "color": "github:mochiya98/color#support_alpha",
-    "parcel": "^2.0.0-alpha.1.1",
-    "parcel-plugin-bundle-visualiser": "^1.2.0",
+    "core-js": "^3.2.1",
     "preact": "^10.0.0-rc.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.0"
+    "@babel/core": "^7.6.0",
+    "parcel": "^2.0.0-alpha.1.1",
+    "parcel-plugin-bundle-visualiser": "^1.2.0"
   }
 }
