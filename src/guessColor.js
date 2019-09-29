@@ -1,3 +1,8 @@
+export const guessTargetID_baseColor = 1;
+export const guessTargetID_mixColor = 2;
+export const guessTargetID_mixAlpha = 3;
+export const guessTargetID_mixedColor = 4;
+
 function clamp255(n) {
   if (isNaN(n)) return 0;
   n = Math.round(n);
@@ -65,8 +70,3 @@ export const guessColor = (colors, type) => {
   }
   return colors;
 };
-
-export const guessTargetID_baseColor = 1;
-export const guessTargetID_mixColor = 2;
-export const guessTargetID_mixAlpha = 3;
-export const guessTargetID_mixedColor = 4;
